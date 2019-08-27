@@ -1,0 +1,31 @@
+server:
+  port: 8194
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: toy-api
+  cloud:
+    config:
+      uri: http://localhost:8093
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, info
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+    enabled: true
+  instance:
+    preferIpAddress: true # 서비스간 통신 시 hostname 보다 ip 를 우선 사용 함
+
+feign:
+  client:
+    config:
+      default:
+        decode404: true
+#  hystrix:
+#    enabled: true
