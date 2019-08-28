@@ -27,5 +27,5 @@ feign:
     config:
       default:
         decode404: true
-#  hystrix:
-#    enabled: true
+  hystrix:
+    enabled: true

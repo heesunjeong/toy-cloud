@@ -19,4 +19,12 @@ public class WelcomeStaticService {
     public String sayHello() {
         return hello;
     }
+
+    public String sayHi() {
+        throw new HystrixBadRequestException("Bad Request", new Exception(""));
+    }
+
+    public String sayHola() {
+        return externalWelcomeService.sayHello();
+    }
 }

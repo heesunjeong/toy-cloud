@@ -16,15 +16,7 @@ public class WelcomeDynamicService {
     @Value("${toystory.say.hello}")
     private String hello;
 
-    @Value("${server.port}")
-    private String port;
-
     public String sayHello() {
-        try {
-            log.info("IP address: {}, port: {}", InetAddress.getLocalHost().getAddress(), port);
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
         return hello;
     }
 }
